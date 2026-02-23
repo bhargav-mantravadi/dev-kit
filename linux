@@ -1,3 +1,18 @@
 #one-liner command in bash to find which subdirectory (recursively) has the maximum number of files:
 find . -type f -printf '%h\n' | sort | uniq -c | sort -nr | head -1
 find . -type f -printf '%h\n' | sort | uniq -c | sort -nr | head -10
+
+count files in the current directory
+find . -maxdepth 1 -type f | wc -l
+
+search recursively for a filename
+grep -r -i copy-filess.sh
+
+recursive partial-name search
+find linux -type f -iname "*copy-filess*"
+
+for absolute path
+find "$(realpath .)" -type f -iname "copy-files.sh"
+
+To list directories with their sizes in descending order:
+du -sh */ | sort -hr
